@@ -1,0 +1,136 @@
+.slider-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 64px;
+    gap: 10px;
+    isolation: isolate;
+
+    width: 1440px;
+    height: 610.63px;
+}
+.slider-item {
+    cursor: pointer;
+    text-align: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+#slider-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    position: absolute;
+width: 881px;
+height: 346px;
+left: calc(50% - 881px/2 + 60px);
+top: calc(50% - 346px/2);
+background: #F8F8F8;
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* Overlay Background */
+.popup-overlay {
+    position: relative;
+    width: 1440px;
+    height: 917px;
+    left: 1957px;
+    top: 317px;
+    background: #FFFFFF;
+  }
+  
+  
+  
+  /* Transparent Background */
+  .popup-overlay-bg {
+    position: absolute;
+    width: 1440px;
+    height: 919px;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Popup Box */
+  .popup-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+    gap: 17px;
+    isolation: isolate;
+    position: absolute;
+    width: 881px;
+    height: 346px;
+    left: calc(50% - 881px / 2 + 60px);
+    top: calc(50% - 346px / 2);
+    background: #F8F8F8;
+    border-radius: 8px;
+    z-index: 2;
+  }
+  
+ 
+  
+  /* Highlighted Vector */
+  .popup-vector {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    background: #997F5A;
+    border: 2px solid #997F5A;
+  }
+  
+  /* Title/Description Text */
+  .popup-title {
+    width: 138px;
+    height: 27px;
+    font-family: 'Nokora', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* Divider Line */
+  .popup-divider {
+    width: 752px;
+    height: 0px;
+    border: 1px solid #8A8A8A;
+    margin: 16px 0;
+  }
+  
+  /* Main Description Text */
+  .popup-text {
+    width: 785px;
+    height: 189px;
+    font-family: 'Nokora', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+  }
+  
+
+

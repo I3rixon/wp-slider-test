@@ -3,7 +3,7 @@
 
     <section class="container ">
 
-<!--        New Block-->
+    <?php echo do_shortcode('[slider]'); ?>
 
     </section>
 
