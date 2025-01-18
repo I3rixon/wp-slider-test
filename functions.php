@@ -64,15 +64,17 @@ function display_slider_shortcode() {
     if ($query->have_posts()) {
         ob_start();
         ?>
-        <div class="slider-wrapper">
-            <?php while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="slider-item" data-id="<?php the_ID(); ?>">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="slider-image"><?php the_post_thumbnail('medium'); ?></div>
-                    <?php endif; ?>
-                    <!--<h3 class="slider-title"><?php the_title(); ?></h3>-->
-                </div>
-            <?php endwhile; ?>
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <div class="slider-item swiper-slide" data-id="<?php the_ID(); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="slider-image"><?php the_post_thumbnail('medium'); ?></div>
+                        <?php endif; ?>
+                        <!--<h3 class="slider-title"><?php the_title(); ?></h3>-->
+                    </div>
+                <?php endwhile; ?>
+            </div>
         </div>
         <div id="slider-modal" style="display: none;">
             <div class="modal-content">

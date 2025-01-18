@@ -1,11 +1,4 @@
-.slider-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 64px;
-    gap: 10px;
-    isolation: isolate;
-
+.swiper-container {
     width: 1440px;
     height: 610.63px;
 }
@@ -15,6 +8,13 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+.swiper-container img {
+    height: 610px; 
+    width: auto; 
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto; 
 }
 #slider-modal {
     position: fixed;
@@ -26,6 +26,7 @@
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 .modal-content {
     position: absolute;

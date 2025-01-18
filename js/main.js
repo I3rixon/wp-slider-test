@@ -19,8 +19,26 @@ jQuery(document).ready(function ($) {
             },
         });
     });
-
     $('.close-modal').on('click', function () {
         $('#slider-modal').fadeOut();
+    });
+
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    const modal = $('#slider-modal');
+    $(window).on('click', function (e) {
+        if ($(e.target).is(modal)) {
+            modal.hide();
+        }
     });
 });
