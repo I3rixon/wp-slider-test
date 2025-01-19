@@ -1,6 +1,16 @@
 .swiper-container {
-    width: 1440px;
-    height: 610.63px;
+  height: auto;
+  /*overflow: hidden;*/
+  position: relative;
+  margin: 0px 49px;
+}
+
+.swiper-button-next {
+  transform: translateY(-50%);
+}
+.swiper {
+  margin-left: -50px; 
+  
 }
 .slider-item {
     cursor: pointer;
@@ -10,8 +20,8 @@
     flex-grow: 0;
 }
 .swiper-container img {
-    height: 610px; 
-    width: auto; 
+    height: 370px;
+    width: 100%; 
     object-fit: cover; 
     display: block;
     margin: 0 auto; 
@@ -22,7 +32,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
     display: none;
     justify-content: center;
     align-items: center;
@@ -32,10 +42,11 @@
     position: absolute;
 width: 881px;
 height: 346px;
-left: calc(50% - 881px/2 + 60px);
+left: calc(50% - 881px/2 - 50px);
 top: calc(50% - 346px/2);
-background: #F8F8F8;
+
 }
+
 .close-modal {
     position: absolute;
     top: 10px;
@@ -46,7 +57,23 @@ background: #F8F8F8;
 }
 
 
+.slider-item {
+  position: relative;
+  text-align: center; 
+  color: white; 
+}
 
+.slider-title {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  font-size: 24px; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+  padding: 10px; 
+  text-transform: uppercase;
+}
 /* Overlay Background */
 .popup-overlay {
     position: relative;
@@ -83,8 +110,7 @@ background: #F8F8F8;
     height: 346px;
     left: calc(50% - 881px / 2 + 60px);
     top: calc(50% - 346px / 2);
-    background: #F8F8F8;
-    border-radius: 8px;
+    background: #F8F8F8;    
     z-index: 2;
   }
   
@@ -115,7 +141,7 @@ background: #F8F8F8;
   
   /* Divider Line */
   .popup-divider {
-    width: 752px;
+    width: 100%;
     height: 0px;
     border: 1px solid #8A8A8A;
     margin: 16px 0;
@@ -135,3 +161,49 @@ background: #F8F8F8;
   
 
 
+  @media (max-width: 768px) {
+    .modal-content {
+        width: 99%;
+        height: auto;
+        max-width: 400px;
+        padding: 16px;
+        left: 5%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        padding: 12px;
+        left: 15px;
+        right: 15px;
+        top: 40%;
+    }
+    .swiper-container img {
+      height: 240px;
+      width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .popup-box {
+      width: 90%;
+      height: auto;
+      /* max-width: 400px; */
+      padding: 24px;
+      gap: 12px;
+      left: 0px;
+      right: 0px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .popup-box {
+      width: 100%;
+      padding: 16px;
+      /* gap: 8px; */
+      left: 0px;
+      right: 0px;
+  }
+}

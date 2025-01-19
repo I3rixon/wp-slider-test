@@ -64,33 +64,50 @@ function display_slider_shortcode() {
     if ($query->have_posts()) {
         ob_start();
         ?>
-        <div class="swiper-container">
-        <div class="swiper-wrapper">
-                <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <div class="slider-item swiper-slide" data-id="<?php the_ID(); ?>">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="slider-image"><?php the_post_thumbnail('medium'); ?></div>
-                        <?php endif; ?>
-                        <!--<h3 class="slider-title"><?php the_title(); ?></h3>-->
-                    </div>
-                <?php endwhile; ?>
+        <h2>Explore by Room: Tailored Furniture Selections</h2>
+        <div class="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <div class="slider-item swiper-slide" data-id="<?php the_ID(); ?>">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="slider-image">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </div>
+                            <?php endif; ?>
+                            <div class="slider-title"><?php the_title(); ?></div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-button-next">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.59 8.09383L13.17 12.6738L8.59 17.2638L10 18.6738L16 12.6738L10 6.67383L8.59 8.09383Z" fill="#222222" />
+                    </svg>
+                </div>
+                <div class="swiper-button-prev">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.41 17.2538L10.83 12.6738L15.41 8.08383L14 6.67383L8 12.6738L14 18.6738L15.41 17.2538Z" fill="#222222" />
+                    </svg>
+                </div>
+
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
         <div id="slider-modal" style="display: none;">
             <div class="modal-content">
-                
-<div class="popup-box">    
-<span class="close-modal"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13 1L1 13M1 1L13 13" stroke="#997F5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-    <div class="popup-title">Description</div>
-    <div class="popup-divider"></div>
-    <div class="popup-text" id="modal-description">
-     
-    </div>
-  </div>
-     
+                <div class="popup-box">
+                    <span class="close-modal">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 1L1 13M1 1L13 13" stroke="#997F5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <div class="popup-title">Description</div>
+                    <div class="popup-divider"></div>
+                    <div class="popup-text" id="modal-description"></div>
+                </div>
             </div>
         </div>
         <?php

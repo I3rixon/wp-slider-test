@@ -24,8 +24,8 @@ jQuery(document).ready(function ($) {
     });
 
     const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 10,
+        slidesPerView: 1,
+        spaceBetween: 50,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -33,6 +33,23 @@ jQuery(document).ready(function ($) {
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+
+              },
+            // Configuration for tablets
+            768: {
+                slidesPerView: 2, 
+                spaceBetween: 25,
+            },
+            // Configuration for desktop
+            1024: {
+                slidesPerView: 4, 
+                spaceBetween: 50,
+            }
         },
     });
     const modal = $('#slider-modal');
